@@ -16,14 +16,6 @@ def main(args):
     else:
         saveExistingFiles()
 
-    #copy the file
-    # savefile(file_loc, folder_name)
-
-
-
-    #write the files details to json
-    # writeJSON(data, file_loc, folder_name)
-
 def saveExistingFiles():
     try:
         with open('data.txt') as json_file:
