@@ -2,6 +2,7 @@ from shutil import copy2
 import os
 import sys
 
+#backup a file by passing {original file location} {folder for copied file}
 def main(args):
     file_loc = args[0]
     folder_name = args[1]
