@@ -16,21 +16,13 @@ def main(args):
     else:
         saveExistingFiles()
 
-    #copy the file
-    # savefile(file_loc, folder_name)
-
-
-
-    #write the files details to json
-    # writeJSON(data, file_loc, folder_name)
-
 def saveExistingFiles():
     try:
-        with open('data.txt') as json_file:
+        with open('/home/machine/Desktop/code/NeekoMySaves/data.txt') as json_file:
             data = json.load(json_file)
             for p in data['saves']:
                 savefile(p['location'], p['folder'])
-    except:
+    except ValueError:
         print("no JSON saves found, you must pass a files location and the name of the folder you want store it in")
         
 def savefile(file_loc, folder_name):
