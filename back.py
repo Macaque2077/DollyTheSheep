@@ -20,7 +20,17 @@ def backup(row):
     out_path = os.path.join(backup_path, row[0])
     copy_tree(row[1], join(out_path, save_time))
 
-with open(file_path, 'r') as csv_file:
-    reader = csv.reader(csv_file, delimiter=",") 
-    for row in reader:
-        backup(row)
+def read_backfile():
+    with open(file_path, 'r') as csv_file:
+        reader = csv.reader(csv_file, delimiter=",") 
+        for row in reader:
+            backup(row)
+
+def manage_saves():
+    fu = [f.path for f in os.scandir(backup_path) if f.is_dir()]
+    for path in fu:
+        print(path)        
+
+if __name__ =="__main__":
+    # read_backfile()
+    manage_saves()
